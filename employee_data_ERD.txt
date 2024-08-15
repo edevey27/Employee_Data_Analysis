@@ -1,0 +1,39 @@
+#this is the ERD diagram code.
+titles
+-
+title_id VARCHAR PK
+title VARCHAR
+
+employees 
+-
+emp_no PK int
+emp_title_id VARCHAR FK - titles.title_id
+birth_date DATE
+first_name VARCHAR
+last_name VARCHAR
+sex VARCHAR
+hire_date DATE
+
+
+departments  
+------------
+dept_no PK VARCHAR
+dept_name varchar(200) UNIQUE
+
+dept_manager 
+-
+emp_no VARCHAR PK FK - employees.emp_no
+dept_no VARCHAR PK FK - departments.dept_no
+
+dept_emp 
+----
+emp_no INT  PK FK - employees.emp_no
+dept_no VARCHAR PK FK >- departments.dept_no
+
+
+
+
+salaries 
+----
+emp_no VARCHAR PK FK - employees.emp_no
+salary INT 
